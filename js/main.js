@@ -40,12 +40,36 @@ const productos= [
 
 
 
-
 let products = document.getElementById("productos")
- 	productos.forEach(producto => {
-     let card = document.createElement("div")
-     card.className = "card"
-     card.innerHTML = `<span> ${producto.nombre}</span>
-                     <h3 class="card-product">Precio: $${producto.precio}</h3>`
-     products.appendChild(card)
-})  
+productos.forEach(producto => {
+
+    let card = document.createElement("div")
+    card.className = "card"
+
+    card.innerHTML = `
+        <span>${producto.nombre}</span>
+        <h3 class="card-product">Precio: $${producto.precio}</h3> 
+     <div class="contador-container">
+        <button class="restar-boton">-</button>
+        <span class="contador">0</span>
+        <button class="sumar-boton">+</button>
+    </div>  `
+    products.appendChild(card)
+
+let sumar = card.querySelector(".sumar-boton")
+let restar = card.querySelector(".restar-boton")
+let counter = card.querySelector(".contador")
+let contador = 0
+
+    sumar.addEventListener("click", () => {
+        contador++
+        counter.innerHTML = contador
+    })
+
+    restar.addEventListener("click", () => {
+        if (contador > 0) {
+            contador--
+            counter.innerHTML = contador
+        }
+    })
+})

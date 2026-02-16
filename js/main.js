@@ -1,8 +1,8 @@
- function saludar () {
-     console.log("Hola coder!!")
- }
+// function saludar () {
+//     console.log("Hola coder!!")
+// }
 
- saludar()
+// saludar()
 
  
 let contenedor = document.getElementById("saludo")
@@ -10,61 +10,42 @@ contenedor.className = "header"
 contenedor.innerHTML = "<h2>Hola profes soy <span>Patricio Segarra</span></h2>"
 
 
+const productos= [
+    {
+        id: 1, 
+        nombre: "Adidas campus", 
+        precio: 120000
+    },
+    {
+        id: 2, 
+        nombre: "Nike air force", 
+        precio: 140000
+    },
+    {
+        id: 3, 
+        nombre: "puma suede", 
+        precio: 95000
+    },
+    {
+        id: 4, 
+        nombre: "vans old skool", 
+        precio: 115000
+    },
+    {
+        id: 5, 
+        nombre: "dc shoes", 
+        precio: 130000
+    },
+]
 
 
 
-//function calcular(operacion) {
-//    let numeroA = parseInt(prompt("Ingrese el primer numero"));
-//    let numeroB = parseInt(prompt("Ingrese el segundo numero"));
-//    let resultado;
-//
-//    switch (operacion) {
-//        case "+":
-//            resultado = numeroA + numeroB;
-//            break;
-//        case "-":
-//            resultado = numeroA - numeroB;
-//            break;
-//        case "*":
-//            resultado = numeroA * numeroB;
-//            break;
-//        case "/":
-//            if (numeroB === 0) {
-//                alert("No se puede dividir por cero");
-//                return;
-//            }
-//            resultado = numeroA / numeroB;
-//            break;
-//    }
-//
-//    console.log("El resultado de la operación es: " + resultado);
-//}
 
-//let menu = parseInt(prompt(
-//    "Elija una opcion:\n 1-sumar\n 2-restar\n 3-multiplicar\n 4-dividir\n 5-salir"
-//));
-//
-//while (menu !== 5) {
-//    switch (menu) {
-//        case 1:
-//            calcular("+");
-//            break;
-//        case 2:
-//            calcular("-");
-//            break;
-//        case 3:
-//            calcular("*");
-//            break;
-//        case 4:
-//            calcular("/");
-//            break;
-//        default:
-//            alert("Opción incorrecta");
-//    }
-//
-//    menu = parseInt(prompt(
-//        "Elija una opcion:\n 1-sumar\n 2-restar\n 3-multiplicar\n 4-dividir\n 5-salir"
-//    ));
-//}
-//
-//alert("Programa finalizado");
+let products = document.getElementById("productos")
+ 	productos.forEach(producto => {
+     let card = document.createElement("div")
+     card.className = "card"
+     card.innerHTML = `<span> ${producto.nombre}</span>
+                     <h3 class="card-product">Precio: $${producto.precio}</h3>`
+     products.appendChild(card)
+})  

@@ -37,10 +37,17 @@ const productos= [
         precio: 130000
     },
 ]
-
-
+//store localStorage
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || {}
+}
+function guardarCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
 let products = document.getElementById("productos")
+let carrito = obtenerCarrito()
+
 productos.forEach(producto => {
 
     let card = document.createElement("div")
@@ -59,17 +66,23 @@ productos.forEach(producto => {
 let sumar = card.querySelector(".sumar-boton")
 let restar = card.querySelector(".restar-boton")
 let counter = card.querySelector(".contador")
-let contador = 0
+let contador = carrito[producto.id] || 0
+    counter.innerHTML = contador
 
     sumar.addEventListener("click", () => {
         contador++
         counter.innerHTML = contador
+        carrito[producto.id] = contador
+        guardarCarrito(carrito)
     })
 
     restar.addEventListener("click", () => {
-        if (contador > 0) {
-            contador--
-            counter.innerHTML = contador
+        if (contador === 0) {
+            delete carrito[producto.id]
+        } else {
+            carrito[producto.id] = contador
         }
+
+        guardarCarrito(carrito)
     })
 })

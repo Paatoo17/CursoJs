@@ -77,11 +77,15 @@ let contador = carrito[producto.id] || 0
     })
 
     restar.addEventListener("click", () => {
-        if (contador === 0) {
-            delete carrito[producto.id]
-        } else {
-            carrito[producto.id] = contador
-        }
+        if (contador > 0) {
+            contador--
+            counter.textContent = contador
+
+            if (contador === 0) {
+                delete carrito[producto.id]
+            } else {
+                carrito[producto.id] = contador
+                }
 
         guardarCarrito(carrito)
     })

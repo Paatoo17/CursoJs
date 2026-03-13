@@ -19,7 +19,7 @@ function guardarCarrito(carrito) {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
-let products = document.getElementById("productos")
+let contenedorProductos = document.getElementById("productos")
 let carrito = obtenerCarrito()
 
 fetch("../data/productos.json")
@@ -41,7 +41,7 @@ fetch("../data/productos.json")
         </div>
       `
 
-      products.appendChild(card)
+      contenedorProductos.appendChild(card)
 
       let sumar = card.querySelector(".sumar-boton")
       let restar = card.querySelector(".restar-boton")

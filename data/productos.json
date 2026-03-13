@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nombre": "Adidas campus",
+        "precio": 120000
+    },
+    {
+        "id": 2,
+        "nombre": "Nike air force",
+        "precio": 140000
+    },
+    {
+        "id": 3,
+        "nombre": "puma suede",
+        "precio": 95000
+    },
+    {
+        "id": 4,
+        "nombre": "vans old skool",
+        "precio": 115000
+    },
+    {
+        "id": 5,
+        "nombre": "dc shoes",
+        "precio": 130000
+    }
+]

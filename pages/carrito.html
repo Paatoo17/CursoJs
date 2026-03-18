@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Carrito de compras</title>
+
+    <!-- CSS -->
+    <script src="../js/carrito.js"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Carrito de compras</h1>
+
+        <div class="actions">
+            <button id="add-sample">Agregar producto de prueba</button>
+            <button id="clear-cart" class="ghost">Vaciar carrito</button>
+        </div>
+
+        <table class="cart-list" aria-live="polite">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th class="right">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body"></tbody>
+        </table>
+
+        <div id="empty" class="empty" hidden>
+            Tu carrito está vacío.
+        </div>
+
+        <div class="total-row">
+            <div class="muted">Total</div>
+            <div class="total" id="cart-total">$0.00</div>
+        </div>
+
+        <div class="footer-actions">
+            <button id="checkout">Finalizar compra</button>
+            <button id="continue" class="ghost">Seguir comprando</button>
+        </div>
+    </main>
+
+    <!-- JS externo -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -32,14 +32,13 @@ fetch("../data/productos.json")
       card.className = "card"
 
       card.innerHTML = `
-        <span>${producto.nombre}</span>
+           <span>${producto.nombre}</span>
         <h3 class="card-product">Precio: $${producto.precio}</h3> 
         <div class="contador-container">
             <button class="restar-boton">-</button>
             <span class="contador">0</span>
             <button class="sumar-boton">+</button>
-        </div>
-      `
+        </div>`
 
       contenedorProductos.appendChild(card)
 

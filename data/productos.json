@@ -23,5 +23,30 @@
         "id": 5,
         "nombre": "dc shoes",
         "precio": 130000
+    },
+    {
+        "id": 6,
+        "nombre": "vans old skool",
+        "precio": 115000
+    },
+    {
+        "id": 7,
+        "nombre": "vans old skool",
+        "precio": 115000
+    },
+    {
+        "id": 8,
+        "nombre": "vans old skool",
+        "precio": 115000
+    },
+    {
+        "id": 9,
+        "nombre": "vans old skool",
+        "precio": 115000
+    },
+    {
+        "id": 10,
+        "nombre": "vans old skool",
+        "precio": 115000
     }
 ]

@@ -2,51 +2,61 @@
     {
         "id": 1,
         "nombre": "Adidas campus",
-        "precio": 120000
+        "precio": 146000,
+        "imagen": "../images/campus.webp"
     },
     {
         "id": 2,
         "nombre": "Nike air force",
-        "precio": 140000
+        "precio": 140000,
+        "imagen": "../images/airforce.webp"
     },
     {
         "id": 3,
-        "nombre": "puma suede",
-        "precio": 95000
+        "nombre": "Puma suede",
+        "precio": 95000,
+        "imagen": "../images/pumasuede.webp"
     },
     {
         "id": 4,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "Vans knu skool",
+        "precio": 115000,
+        "imagen": "../images/knu.webp"
     },
     {
         "id": 5,
-        "nombre": "dc shoes",
-        "precio": 130000
+        "nombre": "DC shoes",
+        "precio": 130000,
+        "imagen": "../images/dc.webp"
     },
     {
         "id": 6,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "Converse chuck taylor",
+        "precio": 142000,
+        "imagen": "../images/chuck_taylor.webp"
     },
     {
         "id": 7,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "Adidas samba",
+        "precio": 165000,
+        "imagen": "../images/samba.webp"
     },
     {
         "id": 8,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "Fila disruptor",
+        "precio": 130000,
+        "imagen": "../images/disruptor.webp"
     },
     {
         "id": 9,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "Asics gel rebound",
+        "precio": 100000,
+        "imagen": "../images/gel_rebound.webp"
     },
     {
         "id": 10,
-        "nombre": "vans old skool",
-        "precio": 115000
+        "nombre": "On running cloud",
+        "precio": 250000,
+        "imagen": "../images/cloud.webp"
     }
 ]

@@ -33,6 +33,7 @@ fetch("../data/productos.json")
 
       card.innerHTML = `
            <span>${producto.nombre}</span>
+        <img src="${producto.imagen}" alt="${producto.nombre}">
         <h3 class="card-product">Precio: $${producto.precio}</h3> 
         <div class="contador-container">
             <button class="restar-boton">-</button>

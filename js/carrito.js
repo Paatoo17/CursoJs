@@ -1,15 +1,13 @@
-// ====== CARRITO DESDE LOCALSTORAGE ======
+
 function cargarCarrito(){
     return JSON.parse(localStorage.getItem('carrito')) || {};
 }
 
-// ====== TRAER PRODUCTOS DESDE JSON ======
 async function obtenerProductos(){
     const res = await fetch("../data/productos.json");
     return await res.json();
 }
 
-// ====== RENDER DEL CARRITO ======
 async function renderCart(){
     const carrito = cargarCarrito();
     const productos = await obtenerProductos();
@@ -58,5 +56,4 @@ async function renderCart(){
     document.getElementById('cart-total').textContent = `$${total}`;
 }
 
-// ====== INICIALIZACIÓN ======
 renderCart();

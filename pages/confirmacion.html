@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- js -->
-    <script src="../js/carrito.js"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="../styles/styles.css">
-
-    <title>Confirmación de compra</title>
+    <title>Confirmación de Pedido - Sneaker Store</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Sneaker Store</a>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="./carrito.html" class="carrito-link"> Ver Carrito</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="confirmation-container">
         <div class="success-icon">✅</div>
-
         <h1 class="confirmation-title">¡Pago Exitoso!</h1>
         <p style="font-size: 1.2rem; color: #5a675d; margin-bottom: 2rem;">
             Tu pedido ha sido confirmado y será procesado pronto.
@@ -31,6 +36,7 @@
                 <h3>Productos Comprados</h3>
                 <div id="products-list"></div>
             </div>
+
 
             <div class="detail-section">
                 <h3> Datos de Envío</h3>
@@ -55,10 +61,42 @@
                     <strong id="confirm-ciudad"></strong>
                 </div>
             </div>
-
         </div>
 
+        <!-- TOTAL -->
+        <div class="total-confirmation">
+            Total Pagado: <span id="confirm-total">$0</span>
+        </div>
+
+        <div style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; margin: 2rem 0;">
+            <p style="color: #27ae60; font-weight: 600; margin-bottom: 0.5rem;">
+                📧 Te hemos enviado un correo de confirmación
+            </p>
+            <p style="color: #5a675d;">
+                Recibirás actualizaciones sobre tu pedido en tu email.
+            </p>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="confirmation-actions">
+            <a href="../index.html" class="btn-home">Volver al Inicio</a>
+        </div>
+
+        <p style="margin-top: 2rem; color: #5a675d; font-size: 0.9rem;">
+            Gracias por tu compra. ¡Esperamos que disfrutes tus nuevas zapatillas! 👟
+        </p>
     </main>
 
-    <!-- JS externo -->
-    <script src="./app.js"></script>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sneaker Store. Todos los derechos reservados.</p>
+        </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./js/confirmation.js"></script>
+</body>
+
+</html>

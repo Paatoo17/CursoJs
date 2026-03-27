@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- js -->
     <script src="../js/carrito.js"></script>
+    <!--toastify-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/styles.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <title>Carrito de compras</title>
 </head>
+
 <body>
     <main class="container">
-        <h1>Carrito de compras</h1>
-
+        <div class="header">
+            <h2>Carrito de compras</h2>
             <div class="actions">
-            <button id="clear-cart" class="ghost">Vaciar carrito</button>
+                <button id="vaciar-carrito">Vaciar carrito</button>
+            </div>
         </div>
 
-        <table class="cart-list" aria-live="polite">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th class="right">Subtotal</th>
-                </tr>
-            </thead>
-            <tbody id="cart-body"></tbody>
-        </table>
+        <div id="cart-container" class="cart-container"></div>
 
-        <div id="empty" class="empty" hidden>
-            Tu carrito está vacío.
-        </div>
-
-        <div class="total-row">
-            <div class="muted">Total</div>
-            <div class="total" id="cart-total">$0.00</div>
+        <div class="total-row" id="total-row">
+            <h3>Total</h3>
+            <h3 class="total" id="cart-total">$0</h3>
         </div>
 
         <div class="footer-actions">
-            <button id="checkout">Finalizar compra</button>
             <a href="../index.html">Seguir comprando</a>
+            <a href="./checkout.html" class="boton-carrito">Finalizar compra</a>
         </div>
     </main>
 
-    <!-- JS externo -->
-    <script src="app.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
 </body>
+
 </html>

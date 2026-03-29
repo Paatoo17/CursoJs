@@ -1,64 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- js -->
-    <script src="../js/carrito.js"></script>
-    <!-- CSS -->
+    <!--js-->
+    <script defer src="../js/checkout.js"></script>
+    <!--toastify-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!--CSS-->
     <link rel="stylesheet" href="../styles/styles.css">
-
-    <title>Confirmación de compra</title>
+    <title>Document</title>
 </head>
+
 <body>
 
-    <main class="confirmation-container">
-        <div class="success-icon">✅</div>
-
-        <h1 class="confirmation-title">¡Pago Exitoso!</h1>
-        <p style="font-size: 1.2rem; color: #5a675d; margin-bottom: 2rem;">
-            Tu pedido ha sido confirmado y será procesado pronto.
-        </p>
-
-        <div class="order-number">
-            Número de orden: <strong id="order-num">#12345</strong>
+    <header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Sneaker Store</a>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="./carrito.html" class="carrito-link"> Ver Carrito</a>
+            </nav>
         </div>
 
-        <div class="confirmation-details">
+        <div id="checkout"></div>
 
-            <div class="detail-section">
-                <h3>Productos Comprados</h3>
-                <div id="products-list"></div>
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sneaker Store. Todos los derechos reservados.</p>
             </div>
+        </footer>
 
-            <div class="detail-section">
-                <h3> Datos de Envío</h3>
-                <div class="detail-item">
-                    <span>Nombre:</span>
-                    <strong id="confirm-nombre"></strong>
-                </div>
-                <div class="detail-item">
-                    <span>Email:</span>
-                    <strong id="confirm-email"></strong>
-                </div>
-                <div class="detail-item">
-                    <span>Teléfono:</span>
-                    <strong id="confirm-telefono"></strong>
-                </div>
-                <div class="detail-item">
-                    <span>Dirección:</span>
-                    <strong id="confirm-direccion"></strong>
-                </div>
-                <div class="detail-item">
-                    <span>Ciudad:</span>
-                    <strong id="confirm-ciudad"></strong>
-                </div>
-            </div>
 
-        </div>
 
-    </main>
+</body>
 
-    <!-- JS externo -->
-    <script src="./app.js"></script>
+</html>

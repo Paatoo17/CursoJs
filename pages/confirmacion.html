@@ -17,88 +17,51 @@
 <body>
     <header">
         <div class="header-container">
-            <a href="../index.html" class="logo">Sneaker Store</a>
+            <a href="../index.html" class="link">Sneaker Store</a>
             <nav class="nav-links">
-                <a href="../index.html">Inicio</a>
-                <a href="./carrito.html" class="carrito-link"> Ver Carrito</a>
+                <a href="../index.html" class="link">Inicio</a>
             </nav>
         </div>
-    </header>
+        </header>
 
-    <main class="confirmation-container">
-        <div class="success-icon">✅</div>
-        <h1 class="confirmation-title">¡Pago Exitoso!</h1>
-        <p style="font-size: 1.2rem; color: #5a675d; margin-bottom: 2rem;">
-            Tu pedido ha sido confirmado y será procesado pronto.
-        </p>
+        <main class="confirmation-container">
+            <h1 class="confirmation-title">¡Pago Exitoso!</h1>
+            <p>
+                Tu pedido ha sido confirmado y será procesado pronto.
+            </p>
 
-        <div class="order-number">
-            Número de orden: <strong id="order-num">#12345</strong>
-        </div>
-
-        <div class="confirmation-details">
-
-            <div class="detail-section">
-                <h3>Productos Comprados</h3>
-                <div id="products-list"></div>
+            <div>
+                <h3>Número de orden: #12345</h3>
             </div>
 
+            <div class="confirmation-details">
 
-            <div class="detail-section">
-                <h3> Datos de Envío</h3>
-                <div class="detail-item">
-                    <span>Nombre:</span>
-                    <strong id="confirm-nombre"></strong>
+                <div>
+                    <h2>Productos Comprados</h2>
                 </div>
-                <div class="detail-item">
-                    <span>Email:</span>
-                    <strong id="confirm-email"></strong>
+
+
+                <div id="confirmacion" class="confirmacion"> </div>
+
+                <div>
+                    <p>
+                        Te hemos enviado un correo de confirmación 📧
+                    </p>
+                    <p>
+                        Recibirás actualizaciones sobre tu pedido en tu email.
+                    </p>
                 </div>
-                <div class="detail-item">
-                    <span>Teléfono:</span>
-                    <strong id="confirm-telefono"></strong>
+
+                <div>
+                    <p> Gracias por tu compra. ¡Esperamos que disfrutes tus nuevas zapatillas! 👟 </p>
                 </div>
-                <div class="detail-item">
-                    <span>Dirección:</span>
-                    <strong id="confirm-direccion"></strong>
-                </div>
-                <div class="detail-item">
-                    <span>Ciudad:</span>
-                    <strong id="confirm-ciudad"></strong>
-                </div>
+        </main>
+
+        <footer class="footer">
+            <div>
+                <p>&copy; 2026 Sneaker Store. Todos los derechos reservados.</p>
             </div>
-        </div>
-
-        <!-- TOTAL -->
-        <div class="total-confirmation">
-            Total Pagado: <span id="confirm-total">$0</span>
-        </div>
-
-        <div style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; margin: 2rem 0;">
-            <p style="color: #27ae60; font-weight: 600; margin-bottom: 0.5rem;">
-                📧 Te hemos enviado un correo de confirmación
-            </p>
-            <p style="color: #5a675d;">
-                Recibirás actualizaciones sobre tu pedido en tu email.
-            </p>
-        </div>
-
-        <!-- ACCIONES -->
-        <div class="confirmation-actions">
-            <a href="../index.html" class="btn-home">Volver al Inicio</a>
-        </div>
-
-        <p> Gracias por tu compra. ¡Esperamos que disfrutes tus nuevas zapatillas! 👟 </p>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sneaker Store. Todos los derechos reservados.</p>
-        </div>
-        </div>
-    </footer>
-
+        </footer>
 </body>
 
 </html>

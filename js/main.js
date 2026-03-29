@@ -47,13 +47,13 @@ function actualizarContenidoCard(card, producto) {
 
     card.innerHTML =
         `<div class="card">
-      <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+      <img src="${producto.imagen}" class="card-imagen" alt="${producto.nombre}">
         <div class="card-body">
           <h3 class="card-title">${producto.nombre}</h3>
           <h3 class="card-precio">$ ${producto.precio}</h3>
                 <div class="contador-container">
                     ${contadorActual === 0
-            ? `<button class="btn-agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>`
+            ? `<button class="btn" data-id="${producto.id}">Agregar al carrito</button>`
             : `
                             <button class="restar-boton">-</button>
                             <span class="contador">${contadorActual}</span>
@@ -67,7 +67,7 @@ function actualizarContenidoCard(card, producto) {
 
 function agregarEventosACard(card, productoId) {
     card.addEventListener("click", function (e) {
-        if (e.target.classList.contains("btn-agregar-carrito")) {
+        if (e.target.classList.contains("btn")) {
             carrito[productoId] = 1
             guardarCarrito(carrito)
             actualizarCard(productoId)

@@ -13,8 +13,7 @@ function guardarCarrito(carrito) {
 
 function vaciarCarrito() {
     localStorage.removeItem('carrito');
-    renderCart();
-
+    rendercarrito();
     Toastify({
         text: "Vaciaste tu carrito",
         duration: 2500,
@@ -26,20 +25,16 @@ function vaciarCarrito() {
     }).showToast();
 }
 
-async function renderCart() {
+async function rendercarrito() {
     const carrito = cargarCarrito();
     const productos = await obtenerProductos();
-    const container = document.getElementById('cart-container');
+    const container = document.getElementById('carrito-container');
 
     container.innerHTML = '';
     let total = 0;
 
-    let carritoVacio = Object.keys(carrito).length === 0;
-
-    if (carritoVacio) {
-        container.innerHTML =
-            '<div class="empty-cart"><p>Tu carrito está vacío</p></div>';
-
+    if (Object.keys(carrito).length === 0) {
+        container.innerHTML = '<div class="empty-carrito"><p>Tu carrito está vacío</p></div>';
         document.getElementById('total-row').style.display = 'none';
         return;
     }
@@ -56,22 +51,22 @@ async function renderCart() {
         total += subtotal;
 
         let div = document.createElement("div");
-        div.className = "cart-item";
+        div.className = "carrito";
 
         div.innerHTML = `
-            <div class="cart-item-image">
+            <div class="carrito-imagen">
                 <img src="${producto.imagen}" alt="${producto.nombre}">
             </div>
-            <div class="cart-item-info">
+            <div class="carrito-info">
                 <h3 class="card-title">${producto.nombre}</h3>
                 <p class="card-precio">$${producto.precio.toLocaleString()}</p>
             </div>
-            <div class="cart-item-carrito">
+            <div class="carrito-carrito">
                 <button class="restar-boton">-</button>
                 <span class="contador">${cantidad}</span>
                 <button class="sumar-boton">+</button>
             </div>
-            <div class="cart-item-subtotal">$${subtotal.toLocaleString()}</div>
+            <div class="carrito-subtotal">$${subtotal.toLocaleString()}</div>
         `;
 
         container.appendChild(div);
@@ -82,38 +77,30 @@ async function renderCart() {
         botonSumar.addEventListener("click", () => {
             let carrito = cargarCarrito();
             let contador = carrito[id] || 0;
-
             contador++;
             carrito[id] = contador;
-
             guardarCarrito(carrito);
-            renderCart();
+            rendercarrito();
         });
 
         botonRestar.addEventListener("click", () => {
             let carrito = cargarCarrito();
             let contador = carrito[id] || 0;
-
             if (contador > 1) {
                 contador--;
                 carrito[id] = contador;
             } else {
                 delete carrito[id];
             }
-
             guardarCarrito(carrito);
-            renderCart();
+            rendercarrito();
         });
     });
 
-    document.getElementById('cart-total').textContent =
-        `$${total.toLocaleString()}`;
+    document.getElementById('carrito-total').textContent = `$${total.toLocaleString()}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document
-        .getElementById('vaciar-carrito')
-        .addEventListener("click", vaciarCarrito);
-
-    renderCart();
+    document.getElementById('vaciar-carrito').addEventListener("click", vaciarCarrito);
+    rendercarrito();
 });

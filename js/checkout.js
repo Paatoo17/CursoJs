@@ -15,7 +15,7 @@ async function renderCheckout() {
     contenedor.className = "contenedor-checkout";
 
     let total = 0;
-    let itemsHTML = "";
+    let innerHTML = "";
 
     Object.keys(carrito).forEach(id => {
         const producto = productos.find(p => p.id == id);
@@ -26,9 +26,9 @@ async function renderCheckout() {
         const subtotal = producto.precio * cantidad;
         total += subtotal;
 
-        itemsHTML += `
+        innerHTML += `
             <div class="resumen-item">
-                <img src="${producto.imagen}" alt="${producto.nombre}" class="resumen-img">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="resumen-imagen">
                 <span>${producto.nombre} (x${cantidad})</span>
                 <span>$${subtotal.toLocaleString()}</span>
             </div>
@@ -36,7 +36,7 @@ async function renderCheckout() {
     });
 
     contenedor.innerHTML = `
-        <div class="checkout-container">
+        <div class="container">
 
             <form id="checkout-form" class="checkout-form">
                 <h2> Datos de comprador </h2>
@@ -74,14 +74,14 @@ async function renderCheckout() {
                             <div class="resumen-carrito">
                 <h3>Resumen de compra</h3>
                 <div class="resumen-items">
-                    ${itemsHTML}
+                    ${innerHTML}
                 </div>
                 <div class="resumen-total">
                     <strong>Total: $${total.toLocaleString()}</strong>
                 </div>
             </div>
 
-                <button type="submit" class="btn-pagar">
+                <button type="submit" class="btn">
                     Finalizar Compra
                 </button>
             </form>
@@ -144,3 +144,55 @@ async function procesarCompra(e) {
 }
 
 document.addEventListener("DOMContentLoaded", renderCheckout);
+document.addEventListener("DOMContentLoaded", function () {
+
+    let pedido = JSON.parse(localStorage.getItem("ultimoPedido"));
+
+    if (!pedido) return;
+
+    let contenedor = document.getElementById("confirmacion");
+
+    let div = document.createElement("div");
+    div.className = "confirmacion-detalle";
+
+    div.innerHTML = `
+        <h3>Datos de Envío</h3>
+
+        <div class="detail-item">
+            <span>Nombre:</span>
+            <strong>${pedido.cliente.nombre}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Email:</span>
+            <strong>${pedido.cliente.email}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Teléfono:</span>
+            <strong>${pedido.cliente.telefono}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Dirección:</span>
+            <strong>${pedido.cliente.direccion}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Ciudad:</span>
+            <strong>${pedido.cliente.ciudad}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Total:</span>
+            <strong>$${pedido.total.toLocaleString()}</strong>
+        </div>
+
+        <div class="detail-item">
+            <span>Fecha:</span>
+            <strong>${pedido.fecha}</strong>
+        </div>
+    `;
+
+    contenedor.appendChild(div);
+});
